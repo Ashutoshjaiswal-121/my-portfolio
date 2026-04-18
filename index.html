@@ -1,0 +1,1958 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Professional Web Developer specializing in modern web technologies. Check out my portfolio and projects."
+    />
+    <meta
+      name="keywords"
+      content="web developer, portfolio, html, css, javascript, tailwind"
+    />
+    <meta name="author" content="Ashutosh Jaiswal" />
+    <title>Ashutosh Jaiswal | Portfolio</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Tailwind (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              // Warm + modern palette (avoid purple/magenta). Blue is used only as a subtle hero background glow.
+              primary: "#f97316", // orange
+              secondary: "#14b8a6", // teal
+              accent: "#facc15", // yellow
+              dark: "#0a0a0a",
+              "dark-light": "#1a1a1a",
+              "text-secondary": "#b0b0b0",
+            },
+            fontFamily: {
+              // Keep existing class names but switch to newer font pairing.
+              poppins: ["Inter", "sans-serif"],
+              orbitron: ["Space Grotesk", "sans-serif"],
+            },
+            boxShadow: {
+              glow: "0 0 55px rgba(249, 115, 22, 0.28)",
+            },
+            keyframes: {
+              floaty: {
+                "0%, 100%": { transform: "translateY(0px)" },
+                "50%": { transform: "translateY(-12px)" },
+              },
+              caret: {
+                "0%, 49%": { opacity: "1" },
+                "50%, 100%": { opacity: "0" },
+              },
+            },
+            animation: {
+              floaty: "floaty 6s ease-in-out infinite",
+              caret: "caret 1s step-end infinite",
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+  </head>
+
+  <body class="bg-dark text-white font-poppins overflow-x-hidden">
+    <!-- Navbar -->
+    <nav
+      id="navbar"
+      class="fixed top-0 left-0 right-0 z-50 bg-dark/95 backdrop-blur supports-[backdrop-filter]:bg-dark/80 transition-all"
+    >
+      <div class="mx-auto max-w-6xl px-4">
+        <div class="flex h-16 items-center justify-between">
+          <a
+            href="#home"
+            class="font-orbitron text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
+            >Portfolio</a
+          >
+
+          <button
+            id="navToggle"
+            class="lg:hidden inline-flex items-center justify-center rounded-md border border-white/10 px-3 py-2 text-white/90 hover:text-primary hover:border-primary/40"
+            aria-expanded="false"
+            aria-controls="navMenu"
+          >
+            <span class="sr-only">Toggle navigation</span>
+            <i class="fas fa-bars"></i>
+          </button>
+
+          <div id="navMenu" class="hidden lg:block">
+            <ul class="flex items-center gap-7 text-sm font-medium">
+              <li>
+                <a class="nav-link hover:text-primary transition" href="#home"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a class="nav-link hover:text-primary transition" href="#about"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a
+                  class="nav-link hover:text-primary transition"
+                  href="#education"
+                  >Education</a
+                >
+              </li>
+              <li>
+                <a
+                  class="nav-link hover:text-primary transition"
+                  href="#projects"
+                  >Projects</a
+                >
+              </li>
+              <li>
+                <a
+                  class="nav-link hover:text-primary transition"
+                  href="#contact"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Mobile menu -->
+        <div id="navMenuMobile" class="hidden lg:hidden pb-4">
+          <ul class="grid gap-2 text-sm font-medium">
+            <li>
+              <a
+                class="block rounded-md px-3 py-2 hover:bg-white/5 hover:text-primary"
+                href="#home"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                class="block rounded-md px-3 py-2 hover:bg-white/5 hover:text-primary"
+                href="#about"
+                >About</a
+              >
+            </li>
+            <li>
+              <a
+                class="block rounded-md px-3 py-2 hover:bg-white/5 hover:text-primary"
+                href="#education"
+                >Education</a
+              >
+            </li>
+            <li>
+              <a
+                class="block rounded-md px-3 py-2 hover:bg-white/5 hover:text-primary"
+                href="#projects"
+                >Projects</a
+              >
+            </li>
+            <li>
+              <a
+                class="block rounded-md px-3 py-2 hover:bg-white/5 hover:text-primary"
+                href="#contact"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Home / Hero -->
+    <section id="home" class="relative min-h-screen pt-16">
+      <div
+        class="absolute inset-0 bg-gradient-to-br from-dark via-dark-light to-dark"
+      ></div>
+      <!-- modern blurred color glow at the top -->
+      <div
+        aria-hidden="true"
+        class="pointer-events-none absolute -top-48 left-1/2 h-[520px] w-[860px] -translate-x-1/2 rounded-full bg-gradient-to-r from-primary/45 via-primary/20 to-accent/10 blur-3xl opacity-90"
+      ></div>
+      <!-- subtle warm tint to keep depth (orange) -->
+      <div
+        aria-hidden="true"
+        class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(249,115,22,0.14),transparent_60%)]"
+      ></div>
+      <div class="relative mx-auto max-w-6xl px-4">
+        <div
+          class="grid min-h-[calc(100vh-4rem)] items-center gap-10 py-12 lg:grid-cols-2"
+        >
+          <div>
+            <div
+              class="inline-flex items-center gap-2 rounded-full bg-white/5 px-4 py-2 text-sm text-white/90 ring-1 ring-white/10"
+            >
+              <i class="fas fa-graduation-cap text-primary"></i>
+              <span>MCA Student</span>
+            </div>
+
+            <h1
+              class="mt-6 font-orbitron text-4xl font-bold leading-tight sm:text-5xl"
+            >
+              Hi, I'm
+              <span
+                class="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
+                >Ashutosh Jaiswal</span
+              >
+            </h1>
+
+            <h2 class="mt-4 text-xl text-text-secondary sm:text-2xl">
+              I'm a
+              <span
+                class="typewriter-text text-primary"
+                data-words='["MCA Student","Aspiring Software Developer","Full Stack Web Developer","Quick Learner","Problem Solver"]'
+              ></span>
+              <span
+                class="inline-block w-[2px] h-6 bg-primary align-[-4px] ml-1 animate-caret"
+              ></span>
+            </h2>
+
+            <p
+              class="mt-5 max-w-xl text-base leading-relaxed text-text-secondary sm:text-lg"
+            >
+              MCA (First-Year) student with a strong foundation in programming
+              and web technologies. I enjoy building responsive web apps and
+              solving problems using clean, practical code.
+            </p>
+
+            <div class="mt-8 flex flex-wrap gap-4">
+              <a
+                href="#projects"
+                class="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-primary to-secondary px-6 py-3 text-sm font-semibold text-dark shadow-glow hover:-translate-y-0.5 transition"
+              >
+                <i class="fas fa-briefcase mr-2"></i>View My Projects
+              </a>
+              <a
+                href="#contact"
+                class="inline-flex items-center justify-center rounded-full border-2 border-primary/70 px-6 py-3 text-sm font-semibold text-primary hover:bg-primary hover:text-dark hover:-translate-y-0.5 transition"
+              >
+                <i class="fas fa-paper-plane mr-2"></i>Let's Connect
+              </a>
+            </div>
+
+            <div
+              class="mt-6 flex flex-wrap items-center gap-5 text-sm text-white/80"
+            >
+              <a
+                class="hover:text-primary transition"
+                href="assets/uploads/myresume2.pdf"
+                download
+              >
+                <i class="fas fa-download mr-2"></i>Download Resume
+              </a>
+              <a
+                class="hover:text-primary transition"
+                href="https://github.com/Ashutoshjaiswal-121"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <i class="fab fa-github mr-2"></i>GitHub
+              </a>
+              <a
+                class="hover:text-primary transition"
+                href="https://www.linkedin.com/in/ak-jaiswal/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <i class="fab fa-linkedin mr-2"></i>LinkedIn
+              </a>
+              <a
+                class="hover:text-primary transition"
+                href="https://www.geeksforgeeks.org/profile/ashutoshjaiswal121"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <i class="fas fa-code mr-2"></i>GeeksforGeeks
+              </a>
+            </div>
+          </div>
+
+          <div class="flex justify-center lg:justify-end">
+            <div class="relative w-[280px] sm:w-[360px] lg:w-[420px]">
+              <div
+                class="rounded-[2.25rem] bg-gradient-to-br from-primary/50 via-secondary/45 to-accent/40 p-[2px] shadow-[0_30px_80px_rgba(0,0,0,0.55)]"
+              >
+                <div
+                  class="rounded-[2.15rem] bg-dark-light/40 p-3 ring-1 ring-white/10 backdrop-blur"
+                >
+                  <div class="aspect-[896/1200] overflow-hidden rounded-3xl">
+                    <img
+                      src="assets/images/profile.jpg"
+                      alt="Ashutosh Jaiswal"
+                      class="h-full w-full object-cover object-top animate-floaty"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Focus -->
+    <section class="py-14">
+      <div class="mx-auto max-w-6xl px-4">
+        <div class="text-center">
+          <h2 class="font-orbitron text-3xl font-bold">
+            What I
+            <span
+              class="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
+              >Bring</span
+            >
+          </h2>
+          <p class="mt-3 text-text-secondary">
+            Skills and qualities that make me a valuable team member
+          </p>
+        </div>
+
+        <div class="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-4">
+          <div
+            class="rounded-2xl bg-white/5 p-5 ring-1 ring-white/10 hover:ring-primary/40 transition"
+          >
+            <div
+              class="mb-3 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary"
+            >
+              <i class="fas fa-lightbulb"></i>
+            </div>
+            <h4 class="font-semibold">Problem Solver</h4>
+            <p class="mt-1 text-sm text-text-secondary">
+              Creative solutions for complex challenges
+            </p>
+          </div>
+          <div
+            class="rounded-2xl bg-white/5 p-5 ring-1 ring-white/10 hover:ring-primary/40 transition"
+          >
+            <div
+              class="mb-3 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary"
+            >
+              <i class="fas fa-bolt"></i>
+            </div>
+            <h4 class="font-semibold">Quick Learner</h4>
+            <p class="mt-1 text-sm text-text-secondary">
+              Adapt rapidly to new technologies
+            </p>
+          </div>
+          <div
+            class="rounded-2xl bg-white/5 p-5 ring-1 ring-white/10 hover:ring-primary/40 transition"
+          >
+            <div
+              class="mb-3 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary"
+            >
+              <i class="fas fa-code"></i>
+            </div>
+            <h4 class="font-semibold">Clean Coder</h4>
+            <p class="mt-1 text-sm text-text-secondary">
+              Write maintainable, efficient code
+            </p>
+          </div>
+          <div
+            class="rounded-2xl bg-white/5 p-5 ring-1 ring-white/10 hover:ring-primary/40 transition"
+          >
+            <div
+              class="mb-3 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary"
+            >
+              <i class="fas fa-users"></i>
+            </div>
+            <h4 class="font-semibold">Team Player</h4>
+            <p class="mt-1 text-sm text-text-secondary">
+              Collaborate effectively in teams
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tech Stack -->
+    <section class="bg-dark-light py-14">
+      <div class="mx-auto max-w-6xl px-4">
+        <div class="text-center">
+          <h2 class="font-orbitron text-3xl font-bold">
+            My
+            <span
+              class="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
+              >Tech Stack</span
+            >
+          </h2>
+          <p class="mt-3 text-text-secondary">
+            Technologies I work with confidently
+          </p>
+        </div>
+
+        <div class="mt-10 grid grid-cols-3 gap-4 sm:grid-cols-6">
+          <div
+            class="rounded-2xl bg-white/5 p-4 text-center ring-1 ring-white/10"
+          >
+            <i class="fab fa-html5 text-2xl text-primary"></i>
+            <div class="mt-2 text-sm">HTML</div>
+          </div>
+          <div
+            class="rounded-2xl bg-white/5 p-4 text-center ring-1 ring-white/10"
+          >
+            <i class="fab fa-css3-alt text-2xl text-primary"></i>
+            <div class="mt-2 text-sm">CSS</div>
+          </div>
+          <div
+            class="rounded-2xl bg-white/5 p-4 text-center ring-1 ring-white/10"
+          >
+            <i class="fab fa-js text-2xl text-primary"></i>
+            <div class="mt-2 text-sm">JavaScript</div>
+          </div>
+          <div
+            class="rounded-2xl bg-white/5 p-4 text-center ring-1 ring-white/10"
+          >
+            <i class="fas fa-wind text-2xl text-primary"></i>
+            <div class="mt-2 text-sm">Tailwind</div>
+          </div>
+          <div
+            class="rounded-2xl bg-white/5 p-4 text-center ring-1 ring-white/10"
+          >
+            <i class="fab fa-react text-2xl text-primary"></i>
+            <div class="mt-2 text-sm">React</div>
+          </div>
+          <div
+            class="rounded-2xl bg-white/5 p-4 text-center ring-1 ring-white/10"
+          >
+            <i class="fab fa-bootstrap text-2xl text-primary"></i>
+            <div class="mt-2 text-sm">Bootstrap</div>
+          </div>
+          <div
+            class="rounded-2xl bg-white/5 p-4 text-center ring-1 ring-white/10"
+          >
+            <i class="fab fa-node-js text-2xl text-primary"></i>
+            <div class="mt-2 text-sm">Node.js</div>
+          </div>
+          <div
+            class="rounded-2xl bg-white/5 p-4 text-center ring-1 ring-white/10"
+          >
+            <i class="fas fa-server text-2xl text-primary"></i>
+            <div class="mt-2 text-sm">Express</div>
+          </div>
+          <div
+            class="rounded-2xl bg-white/5 p-4 text-center ring-1 ring-white/10"
+          >
+            <i class="fas fa-database text-2xl text-primary"></i>
+            <div class="mt-2 text-sm">MySQL</div>
+          </div>
+          <div
+            class="rounded-2xl bg-white/5 p-4 text-center ring-1 ring-white/10"
+          >
+            <i class="fas fa-leaf text-2xl text-primary"></i>
+            <div class="mt-2 text-sm">MongoDB</div>
+          </div>
+          <div
+            class="rounded-2xl bg-white/5 p-4 text-center ring-1 ring-white/10"
+          >
+            <i class="fab fa-java text-2xl text-primary"></i>
+            <div class="mt-2 text-sm">Java</div>
+          </div>
+          <div
+            class="rounded-2xl bg-white/5 p-4 text-center ring-1 ring-white/10"
+          >
+            <i class="fab fa-python text-2xl text-primary"></i>
+            <div class="mt-2 text-sm">Python</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section class="py-14">
+      <div class="mx-auto max-w-6xl px-4">
+        <div class="text-center">
+          <h2 class="font-orbitron text-3xl font-bold">
+            My
+            <span
+              class="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
+              >Approach</span
+            >
+          </h2>
+          <p class="mt-3 text-text-secondary">
+            How I tackle projects and deliver results
+          </p>
+        </div>
+
+        <div class="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-4">
+          <div class="rounded-2xl bg-white/5 p-5 ring-1 ring-white/10">
+            <div
+              class="font-orbitron text-2xl bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
+            >
+              01
+            </div>
+            <h4 class="mt-2 font-semibold">Plan</h4>
+            <p class="mt-1 text-sm text-text-secondary">
+              Understand requirements and create roadmap
+            </p>
+          </div>
+          <div class="rounded-2xl bg-white/5 p-5 ring-1 ring-white/10">
+            <div
+              class="font-orbitron text-2xl bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
+            >
+              02
+            </div>
+            <h4 class="mt-2 font-semibold">Design</h4>
+            <p class="mt-1 text-sm text-text-secondary">
+              Create user-friendly and responsive designs
+            </p>
+          </div>
+          <div class="rounded-2xl bg-white/5 p-5 ring-1 ring-white/10">
+            <div
+              class="font-orbitron text-2xl bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
+            >
+              03
+            </div>
+            <h4 class="mt-2 font-semibold">Develop</h4>
+            <p class="mt-1 text-sm text-text-secondary">
+              Write clean, efficient, and scalable code
+            </p>
+          </div>
+          <div class="rounded-2xl bg-white/5 p-5 ring-1 ring-white/10">
+            <div
+              class="font-orbitron text-2xl bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
+            >
+              04
+            </div>
+            <h4 class="mt-2 font-semibold">Deliver</h4>
+            <p class="mt-1 text-sm text-text-secondary">
+              Test thoroughly and deploy successfully
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Value -->
+    <section class="bg-dark-light py-14">
+      <div class="mx-auto max-w-6xl px-4">
+        <div class="text-center">
+          <h2 class="font-orbitron text-3xl font-bold">
+            Why
+            <span
+              class="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
+              >Choose Me</span
+            >
+          </h2>
+          <p class="mt-3 text-text-secondary">
+            What sets me apart as a developer
+          </p>
+        </div>
+
+        <div class="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-4">
+          <div class="rounded-2xl bg-white/5 p-5 ring-1 ring-white/10">
+            <div
+              class="mb-3 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary"
+            >
+              <i class="fas fa-rocket"></i>
+            </div>
+            <h4 class="font-semibold">Fast Learner</h4>
+            <p class="mt-1 text-sm text-text-secondary">
+              Quickly adapt to new technologies and frameworks
+            </p>
+          </div>
+          <div class="rounded-2xl bg-white/5 p-5 ring-1 ring-white/10">
+            <div
+              class="mb-3 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary"
+            >
+              <i class="fas fa-medal"></i>
+            </div>
+            <h4 class="font-semibold">Quality Focus</h4>
+            <p class="mt-1 text-sm text-text-secondary">
+              Commitment to writing clean, maintainable code
+            </p>
+          </div>
+          <div class="rounded-2xl bg-white/5 p-5 ring-1 ring-white/10">
+            <div
+              class="mb-3 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary"
+            >
+              <i class="fas fa-heart"></i>
+            </div>
+            <h4 class="font-semibold">Passionate</h4>
+            <p class="mt-1 text-sm text-text-secondary">
+              Genuine love for coding and problem-solving
+            </p>
+          </div>
+          <div class="rounded-2xl bg-white/5 p-5 ring-1 ring-white/10">
+            <div
+              class="mb-3 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary"
+            >
+              <i class="fas fa-handshake"></i>
+            </div>
+            <h4 class="font-semibold">Reliable</h4>
+            <p class="mt-1 text-sm text-text-secondary">
+              Dedicated to meeting deadlines and expectations
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Project Highlights (from index.php) -->
+    <section class="py-14">
+      <div class="mx-auto max-w-6xl px-4">
+        <div class="text-center">
+          <h2 class="font-orbitron text-3xl font-bold">
+            Project
+            <span
+              class="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
+              >Highlights</span
+            >
+          </h2>
+          <p class="mt-3 text-text-secondary">
+            Key achievements in my development journey
+          </p>
+        </div>
+
+        <div class="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-4">
+          <div
+            class="rounded-2xl bg-white/5 p-6 text-center ring-1 ring-white/10"
+          >
+            <div
+              class="font-orbitron text-3xl bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
+            >
+              8+
+            </div>
+            <h4 class="mt-2 font-semibold">Projects</h4>
+            <p class="mt-1 text-sm text-text-secondary">
+              Completed web applications and sites
+            </p>
+          </div>
+          <div
+            class="rounded-2xl bg-white/5 p-6 text-center ring-1 ring-white/10"
+          >
+            <div
+              class="font-orbitron text-3xl bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
+            >
+              100%
+            </div>
+            <h4 class="mt-2 font-semibold">Responsive</h4>
+            <p class="mt-1 text-sm text-text-secondary">
+              Mobile-first, cross-device compatible
+            </p>
+          </div>
+          <div
+            class="rounded-2xl bg-white/5 p-6 text-center ring-1 ring-white/10"
+          >
+            <div
+              class="font-orbitron text-3xl bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
+            >
+              5+
+            </div>
+            <h4 class="mt-2 font-semibold">Technologies</h4>
+            <p class="mt-1 text-sm text-text-secondary">
+              Modern web development stack
+            </p>
+          </div>
+          <div
+            class="rounded-2xl bg-white/5 p-6 text-center ring-1 ring-white/10"
+          >
+            <div
+              class="font-orbitron text-3xl bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
+            >
+              ∞
+            </div>
+            <h4 class="mt-2 font-semibold">Potential</h4>
+            <p class="mt-1 text-sm text-text-secondary">
+              Ready to learn and grow with your team
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Journey (from index.php) -->
+    <section class="py-14 bg-dark-light">
+      <div class="mx-auto max-w-6xl px-4">
+        <div class="text-center">
+          <h2 class="font-orbitron text-3xl font-bold">
+            My
+            <span
+              class="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
+              >Journey</span
+            >
+          </h2>
+          <p class="mt-3 text-text-secondary">
+            From learning to building real projects
+          </p>
+        </div>
+
+        <div class="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-4">
+          <div class="rounded-2xl bg-white/5 p-6 ring-1 ring-white/10">
+            <div
+              class="mb-3 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary"
+            >
+              <i class="fas fa-book"></i>
+            </div>
+            <h4 class="font-semibold">Foundation</h4>
+            <p class="mt-1 text-sm text-text-secondary">
+              Strong grasp of web fundamentals
+            </p>
+          </div>
+          <div class="rounded-2xl bg-white/5 p-6 ring-1 ring-white/10">
+            <div
+              class="mb-3 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary"
+            >
+              <i class="fas fa-laptop-code"></i>
+            </div>
+            <h4 class="font-semibold">Practice</h4>
+            <p class="mt-1 text-sm text-text-secondary">
+              Hands-on project experience
+            </p>
+          </div>
+          <div class="rounded-2xl bg-white/5 p-6 ring-1 ring-white/10">
+            <div
+              class="mb-3 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary"
+            >
+              <i class="fas fa-project-diagram"></i>
+            </div>
+            <h4 class="font-semibold">Build</h4>
+            <p class="mt-1 text-sm text-text-secondary">
+              Real-world applications
+            </p>
+          </div>
+          <div class="rounded-2xl bg-white/5 p-6 ring-1 ring-white/10">
+            <div
+              class="mb-3 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary"
+            >
+              <i class="fas fa-infinity"></i>
+            </div>
+            <h4 class="font-semibold">Grow</h4>
+            <p class="mt-1 text-sm text-text-secondary">
+              Continuous learning & improvement
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick About (from index.php) -->
+    <section class="py-14 bg-dark-light">
+      <div class="mx-auto max-w-6xl px-4">
+        <div class="grid gap-10 lg:grid-cols-2 lg:items-center">
+          <div>
+            <h2 class="font-orbitron text-3xl font-bold">Why Work With Me?</h2>
+            <div class="mt-8 grid gap-4">
+              <div class="rounded-2xl bg-white/5 p-5 ring-1 ring-white/10">
+                <div class="flex gap-4">
+                  <div
+                    class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary"
+                  >
+                    <i class="fas fa-bolt"></i>
+                  </div>
+                  <div>
+                    <h5 class="font-semibold">Quick Learner</h5>
+                    <p class="mt-1 text-sm text-text-secondary">
+                      Adapt quickly to new technologies and frameworks
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="rounded-2xl bg-white/5 p-5 ring-1 ring-white/10">
+                <div class="flex gap-4">
+                  <div
+                    class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary"
+                  >
+                    <i class="fas fa-mobile-alt"></i>
+                  </div>
+                  <div>
+                    <h5 class="font-semibold">Responsive Design</h5>
+                    <p class="mt-1 text-sm text-text-secondary">
+                      Create websites that work perfectly on all devices
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="rounded-2xl bg-white/5 p-5 ring-1 ring-white/10">
+                <div class="flex gap-4">
+                  <div
+                    class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary"
+                  >
+                    <i class="fas fa-code"></i>
+                  </div>
+                  <div>
+                    <h5 class="font-semibold">Clean Code</h5>
+                    <p class="mt-1 text-sm text-text-secondary">
+                      Write maintainable and well-documented code
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="rounded-2xl bg-white/5 p-5 ring-1 ring-white/10">
+                <div class="flex gap-4">
+                  <div
+                    class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary"
+                  >
+                    <i class="fas fa-lightbulb"></i>
+                  </div>
+                  <div>
+                    <h5 class="font-semibold">Problem Solver</h5>
+                    <p class="mt-1 text-sm text-text-secondary">
+                      Enjoy tackling challenges and finding solutions
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="rounded-3xl bg-white/5 p-8 ring-1 ring-white/10">
+            <h3 class="text-xl font-semibold">My Tech Stack</h3>
+            <div class="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3">
+              <div
+                class="rounded-2xl bg-dark/50 p-4 text-center ring-1 ring-white/10"
+              >
+                <i class="fab fa-html5 text-primary text-xl"></i>
+                <div class="mt-2 text-sm">HTML5</div>
+              </div>
+              <div
+                class="rounded-2xl bg-dark/50 p-4 text-center ring-1 ring-white/10"
+              >
+                <i class="fab fa-css3-alt text-primary text-xl"></i>
+                <div class="mt-2 text-sm">CSS3</div>
+              </div>
+              <div
+                class="rounded-2xl bg-dark/50 p-4 text-center ring-1 ring-white/10"
+              >
+                <i class="fab fa-js text-primary text-xl"></i>
+                <div class="mt-2 text-sm">JavaScript</div>
+              </div>
+              <div
+                class="rounded-2xl bg-dark/50 p-4 text-center ring-1 ring-white/10"
+              >
+                <i class="fas fa-wind text-primary text-xl"></i>
+                <div class="mt-2 text-sm">Tailwind</div>
+              </div>
+              <div
+                class="rounded-2xl bg-dark/50 p-4 text-center ring-1 ring-white/10"
+              >
+                <i class="fab fa-react text-primary text-xl"></i>
+                <div class="mt-2 text-sm">React</div>
+              </div>
+              <div
+                class="rounded-2xl bg-dark/50 p-4 text-center ring-1 ring-white/10"
+              >
+                <i class="fab fa-node-js text-primary text-xl"></i>
+                <div class="mt-2 text-sm">Node.js</div>
+              </div>
+              <div
+                class="rounded-2xl bg-dark/50 p-4 text-center ring-1 ring-white/10"
+              >
+                <i class="fab fa-git-alt text-primary text-xl"></i>
+                <div class="mt-2 text-sm">Git</div>
+              </div>
+              <div
+                class="rounded-2xl bg-dark/50 p-4 text-center ring-1 ring-white/10"
+              >
+                <i class="fab fa-java text-primary text-xl"></i>
+                <div class="mt-2 text-sm">Java</div>
+              </div>
+              <div
+                class="rounded-2xl bg-dark/50 p-4 text-center ring-1 ring-white/10"
+              >
+                <i class="fab fa-python text-primary text-xl"></i>
+                <div class="mt-2 text-sm">Python</div>
+              </div>
+              <div
+                class="rounded-2xl bg-dark/50 p-4 text-center ring-1 ring-white/10"
+              >
+                <i class="fas fa-code text-primary text-xl"></i>
+                <div class="mt-2 text-sm">C/C++</div>
+              </div>
+              <div
+                class="rounded-2xl bg-dark/50 p-4 text-center ring-1 ring-white/10"
+              >
+                <i class="fas fa-server text-primary text-xl"></i>
+                <div class="mt-2 text-sm">Express</div>
+              </div>
+              <div
+                class="rounded-2xl bg-dark/50 p-4 text-center ring-1 ring-white/10"
+              >
+                <i class="fas fa-database text-primary text-xl"></i>
+                <div class="mt-2 text-sm">MySQL</div>
+              </div>
+              <div
+                class="rounded-2xl bg-dark/50 p-4 text-center ring-1 ring-white/10"
+              >
+                <i class="fas fa-leaf text-primary text-xl"></i>
+                <div class="mt-2 text-sm">MongoDB</div>
+              </div>
+            </div>
+            <a
+              href="#about"
+              class="mt-6 inline-flex items-center justify-center rounded-full border-2 border-primary/70 px-6 py-3 text-sm font-semibold text-primary hover:bg-primary hover:text-dark hover:-translate-y-0.5 transition"
+            >
+              <i class="fas fa-user mr-2"></i>Learn More About Me
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Project Preview (from index.php) -->
+    <section class="py-14">
+      <div class="mx-auto max-w-6xl px-4">
+        <div class="text-center">
+          <h2 class="font-orbitron text-3xl font-bold">
+            Featured
+            <span
+              class="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
+              >Project</span
+            >
+          </h2>
+          <p class="mt-3 text-text-secondary">
+            Check out one of my recent works
+          </p>
+        </div>
+
+        <div class="mt-10 grid gap-10 lg:grid-cols-2 lg:items-center">
+          <div class="relative">
+            <img
+              src="assets/uploads/projects/project1.jpg"
+              alt="Featured Project"
+              class="w-full rounded-3xl object-cover ring-1 ring-white/10"
+            />
+            <div
+              class="absolute left-5 top-5 rounded-full bg-primary/15 px-4 py-1 text-xs font-semibold text-primary ring-1 ring-primary/30"
+            >
+              Latest Project
+            </div>
+          </div>
+          <div>
+            <h3 class="text-2xl font-semibold">E-Commerce Website</h3>
+            <p class="mt-3 text-text-secondary leading-relaxed">
+              A fully responsive e-commerce platform built with modern web
+              technologies. Features include product catalog, shopping cart,
+              user authentication, and admin dashboard.
+            </p>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <span
+                class="rounded-full bg-white/5 px-3 py-1 text-xs ring-1 ring-white/10"
+                >HTML5</span
+              >
+              <span
+                class="rounded-full bg-white/5 px-3 py-1 text-xs ring-1 ring-white/10"
+                >CSS3</span
+              >
+              <span
+                class="rounded-full bg-white/5 px-3 py-1 text-xs ring-1 ring-white/10"
+                >JavaScript</span
+              >
+              <span
+                class="rounded-full bg-white/5 px-3 py-1 text-xs ring-1 ring-white/10"
+                >PHP</span
+              >
+              <span
+                class="rounded-full bg-white/5 px-3 py-1 text-xs ring-1 ring-white/10"
+                >MySQL</span
+              >
+            </div>
+            <div class="mt-7 flex flex-wrap gap-3">
+              <a
+                href="#projects"
+                class="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-primary to-secondary px-6 py-3 text-sm font-semibold text-dark hover:-translate-y-0.5 transition"
+                ><i class="fas fa-eye mr-2"></i>View All Projects</a
+              >
+              <a
+                href="https://github.com/Ashutoshjaiswal-121"
+                target="_blank"
+                rel="noreferrer"
+                class="inline-flex items-center justify-center rounded-full border-2 border-primary/70 px-6 py-3 text-sm font-semibold text-primary hover:bg-primary hover:text-dark hover:-translate-y-0.5 transition"
+                ><i class="fab fa-github mr-2"></i>GitHub</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA (from index.php) -->
+    <section class="py-14 bg-dark-light">
+      <div class="mx-auto max-w-6xl px-4">
+        <div
+          class="rounded-3xl bg-white/5 p-10 ring-1 ring-white/10 text-center"
+        >
+          <h2 class="font-orbitron text-3xl font-bold">
+            Ready to Start a Project?
+          </h2>
+          <p class="mt-3 text-text-secondary">
+            I'm excited to contribute to your team and grow together. Let's
+            build something amazing!
+          </p>
+          <div class="mt-7 flex flex-wrap justify-center gap-3">
+            <a
+              href="#contact"
+              class="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-primary to-secondary px-6 py-3 text-sm font-semibold text-dark hover:-translate-y-0.5 transition"
+              ><i class="fas fa-paper-plane mr-2"></i>Get In Touch</a
+            >
+            <a
+              href="assets/uploads/myresume2.pdf"
+              download
+              class="inline-flex items-center justify-center rounded-full border-2 border-primary/70 px-6 py-3 text-sm font-semibold text-primary hover:bg-primary hover:text-dark hover:-translate-y-0.5 transition"
+              ><i class="fas fa-download mr-2"></i>Download Resume</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About (from about.php) -->
+    <section id="about" class="py-14">
+      <div class="mx-auto max-w-6xl px-4">
+        <div class="grid gap-10 lg:grid-cols-2 lg:items-center">
+          <div class="relative">
+            <div class="rounded-3xl bg-white/5 p-6 ring-1 ring-white/10">
+              <div class="relative mx-auto w-full max-w-[360px]">
+                <div
+                  class="rounded-[2.25rem] bg-gradient-to-br from-primary/50 via-secondary/45 to-accent/40 p-[2px]"
+                >
+                  <div
+                    class="rounded-[2.15rem] bg-dark/50 p-3 ring-1 ring-white/10"
+                  >
+                    <div class="aspect-[896/1200] overflow-hidden rounded-3xl">
+                      <img
+                        src="assets/images/profile.jpg"
+                        alt="Ashutosh Jaiswal"
+                        class="h-full w-full object-cover object-top"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="absolute -right-3 -top-3 rounded-full bg-dark-light px-4 py-2 text-xs ring-1 ring-white/10"
+                >
+                  <span class="inline-flex items-center gap-2"
+                    ><span
+                      class="h-2 w-2 rounded-full bg-green-400 a nimate-pulse"
+                    ></span
+                    >Open to Opportunities</span
+                  >
+                </div>
+              </div>
+
+              <div class="mt-6 grid grid-cols-3 gap-3">
+                <div
+                  class="rounded-2xl bg-dark-light/70 p-4 text-center ring-1 ring-white/10"
+                >
+                  <div class="text-primary"><i class="fas fa-code"></i></div>
+                  <div class="mt-2 font-orbitron text-xl">4+</div>
+                  <div class="text-xs text-text-secondary">
+                    Projects Completed
+                  </div>
+                </div>
+                <div
+                  class="rounded-2xl bg-dark-light/70 p-4 text-center ring-1 ring-white/10"
+                >
+                  <div class="text-primary"><i class="fas fa-trophy"></i></div>
+                  <div class="mt-2 font-orbitron text-xl">50+</div>
+                  <div class="text-xs text-text-secondary">
+                    DSA Problems (GFG)
+                  </div>
+                </div>
+                <div
+                  class="rounded-2xl bg-dark-light/70 p-4 text-center ring-1 ring-white/10"
+                >
+                  <div class="text-primary">
+                    <i class="fas fa-layer-group"></i>
+                  </div>
+                  <div class="mt-2 font-orbitron text-xl">15+</div>
+                  <div class="text-xs text-text-secondary">Skills & Tools</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="inline-flex items-center gap-2 rounded-full bg-white/5 px-4 py-2 text-xs ring-1 ring-white/10"
+                ><i class="fas fa-graduation-cap text-primary"></i>MCA
+                Student</span
+              >
+              <span
+                class="inline-flex items-center gap-2 rounded-full bg-white/5 px-4 py-2 text-xs ring-1 ring-white/10"
+                ><i class="fas fa-code text-primary"></i>Aspiring Software
+                Developer</span
+              >
+            </div>
+
+            <h2 class="mt-4 font-orbitron text-3xl font-bold">
+              About
+              <span
+                class="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
+                >Me</span
+              >
+            </h2>
+            <p class="mt-3 text-text-secondary">
+              MCA (First-Year) student with a strong foundation in programming
+              and web technologies.
+            </p>
+
+            <p class="mt-5 text-text-secondary leading-relaxed">
+              To obtain a challenging position as a software developer where I
+              can apply my programming and problem-solving skills. I'm eager to
+              learn new technologies and contribute to organizational growth
+              while continuously improving my technical skills.
+            </p>
+
+            <div class="mt-5 flex flex-wrap gap-2">
+              <span
+                class="rounded-full bg-white/5 px-4 py-2 text-xs ring-1 ring-white/10"
+                >Full Stack (Learning)</span
+              >
+              <span
+                class="rounded-full bg-white/5 px-4 py-2 text-xs ring-1 ring-white/10"
+                >DSA (Basic–Medium)</span
+              >
+              <span
+                class="rounded-full bg-white/5 px-4 py-2 text-xs ring-1 ring-white/10"
+                >React</span
+              >
+              <span
+                class="rounded-full bg-white/5 px-4 py-2 text-xs ring-1 ring-white/10"
+                >Problem Solving</span
+              >
+            </div>
+
+            <div class="mt-6 grid gap-3 sm:grid-cols-2">
+              <div class="rounded-2xl bg-white/5 p-4 ring-1 ring-white/10">
+                <div class="text-xs text-text-secondary">Full Name</div>
+                <div class="mt-1 font-semibold">Ashutosh Kumar Jaiswal</div>
+              </div>
+              <div class="rounded-2xl bg-white/5 p-4 ring-1 ring-white/10">
+                <div class="text-xs text-text-secondary">Email</div>
+                <div class="mt-1 font-semibold">akjaiswal99318@gmail.com</div>
+              </div>
+              <div class="rounded-2xl bg-white/5 p-4 ring-1 ring-white/10">
+                <div class="text-xs text-text-secondary">Location</div>
+                <div class="mt-1 font-semibold">Patna, Bihar, India</div>
+              </div>
+              <div class="rounded-2xl bg-white/5 p-4 ring-1 ring-white/10">
+                <div class="text-xs text-text-secondary">Focus</div>
+                <div class="mt-1 font-semibold">Software Development</div>
+              </div>
+            </div>
+
+            <div class="mt-7 flex flex-wrap gap-3">
+              <a
+                href="assets/uploads/myresume2.pdf"
+                download
+                class="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-primary to-secondary px-6 py-3 text-sm font-semibold text-dark hover:-translate-y-0.5 transition"
+              >
+                <i class="fas fa-download"></i>Download CV
+              </a>
+              <a
+                href="#contact"
+                class="inline-flex items-center gap-2 rounded-full border-2 border-primary/70 px-6 py-3 text-sm font-semibold text-primary hover:bg-primary hover:text-dark hover:-translate-y-0.5 transition"
+              >
+                <i class="fas fa-paper-plane"></i>Let's Discuss
+              </a>
+              <a
+                href="#projects"
+                class="inline-flex items-center gap-2 rounded-full bg-white/5 px-6 py-3 text-sm font-semibold ring-1 ring-white/10 hover:ring-primary/40 hover:-translate-y-0.5 transition"
+              >
+                <i class="fas fa-eye text-primary"></i>View Work
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- About: Skills (simplified, same data) -->
+        <div class="mt-14 rounded-3xl bg-dark-light p-8 ring-1 ring-white/10">
+          <div class="text-center">
+            <h3 class="font-orbitron text-2xl font-bold">
+              My
+              <span
+                class="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
+                >Skills</span
+              >
+            </h3>
+            <p class="mt-2 text-text-secondary">
+              Technologies I'm proficient with
+            </p>
+          </div>
+
+          <div class="mt-8 grid gap-8 lg:grid-cols-2">
+            <div>
+              <h4 class="font-semibold">
+                <i class="fas fa-code mr-2 text-primary"></i>Frontend
+                Technologies
+              </h4>
+              <div class="mt-4 grid gap-4">
+                <div>
+                  <div class="flex justify-between text-sm">
+                    <span>HTML5</span
+                    ><span class="text-text-secondary">90%</span>
+                  </div>
+                  <div class="mt-2 h-2 rounded-full bg-white/10">
+                    <div
+                      class="h-2 w-[90%] rounded-full bg-gradient-to-r from-primary to-secondary"
+                    ></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between text-sm">
+                    <span>CSS3</span
+                    ><span class="text-text-secondary">85%</span>
+                  </div>
+                  <div class="mt-2 h-2 rounded-full bg-white/10">
+                    <div
+                      class="h-2 w-[85%] rounded-full bg-gradient-to-r from-primary to-secondary"
+                    ></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between text-sm">
+                    <span>JavaScript</span
+                    ><span class="text-text-secondary">80%</span>
+                  </div>
+                  <div class="mt-2 h-2 rounded-full bg-white/10">
+                    <div
+                      class="h-2 w-[80%] rounded-full bg-gradient-to-r from-primary to-secondary"
+                    ></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between text-sm">
+                    <span>Bootstrap</span
+                    ><span class="text-text-secondary">85%</span>
+                  </div>
+                  <div class="mt-2 h-2 rounded-full bg-white/10">
+                    <div
+                      class="h-2 w-[85%] rounded-full bg-gradient-to-r from-primary to-secondary"
+                    ></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between text-sm">
+                    <span>Tailwind</span
+                    ><span class="text-text-secondary">85%</span>
+                  </div>
+                  <div class="mt-2 h-2 rounded-full bg-white/10">
+                    <div
+                      class="h-2 w-[85%] rounded-full bg-gradient-to-r from-primary to-secondary"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <h4 class="font-semibold">
+                <i class="fas fa-cogs mr-2 text-primary"></i>Backend & Tools
+              </h4>
+              <div class="mt-4 grid gap-4">
+                <div>
+                  <div class="flex justify-between text-sm">
+                    <span>PHP</span><span class="text-text-secondary">75%</span>
+                  </div>
+                  <div class="mt-2 h-2 rounded-full bg-white/10">
+                    <div
+                      class="h-2 w-[75%] rounded-full bg-gradient-to-r from-primary to-secondary"
+                    ></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between text-sm">
+                    <span>MySQL</span
+                    ><span class="text-text-secondary">70%</span>
+                  </div>
+                  <div class="mt-2 h-2 rounded-full bg-white/10">
+                    <div
+                      class="h-2 w-[70%] rounded-full bg-gradient-to-r from-primary to-secondary"
+                    ></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between text-sm">
+                    <span>Git & GitHub</span
+                    ><span class="text-text-secondary">80%</span>
+                  </div>
+                  <div class="mt-2 h-2 rounded-full bg-white/10">
+                    <div
+                      class="h-2 w-[80%] rounded-full bg-gradient-to-r from-primary to-secondary"
+                    ></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between text-sm">
+                    <span>React Basics</span
+                    ><span class="text-text-secondary">65%</span>
+                  </div>
+                  <div class="mt-2 h-2 rounded-full bg-white/10">
+                    <div
+                      class="h-2 w-[65%] rounded-full bg-gradient-to-r from-primary to-secondary"
+                    ></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between text-sm">
+                    <span>Java</span
+                    ><span class="text-text-secondary">85%</span>
+                  </div>
+                  <div class="mt-2 h-2 rounded-full bg-white/10">
+                    <div
+                      class="h-2 w-[85%] rounded-full bg-gradient-to-r from-primary to-secondary"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education (from education.php) -->
+    <section id="education" class="py-14 bg-dark-light">
+      <div class="mx-auto max-w-6xl px-4">
+        <div class="text-center">
+          <h2 class="font-orbitron text-3xl font-bold">
+            My
+            <span
+              class="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
+              >Education</span
+            >
+          </h2>
+          <p class="mt-3 text-text-secondary">
+            Academic journey and professional qualifications
+          </p>
+        </div>
+
+        <div class="mt-10" id="educationTimeline"></div>
+
+        <div class="mt-14">
+          <div class="text-center">
+            <h3 class="font-orbitron text-2xl font-bold">
+              Professional
+              <span
+                class="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
+                >Certifications</span
+              >
+            </h3>
+            <p class="mt-2 text-text-secondary">
+              Validated skills and expertise
+            </p>
+          </div>
+          <div
+            class="mt-8 grid gap-4 lg:grid-cols-2"
+            id="certificationsGrid"
+          ></div>
+        </div>
+
+        <div class="mt-14 rounded-3xl bg-dark p-8 ring-1 ring-white/10">
+          <div class="text-center">
+            <h3 class="font-orbitron text-2xl font-bold">
+              Technical
+              <span
+                class="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
+                >Skills</span
+              >
+            </h3>
+          </div>
+          <div class="mt-8 grid gap-4 md:grid-cols-3" id="skillsSummary"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="relative overflow-hidden py-14">
+      <div
+        aria-hidden="true"
+        class="pointer-events-none absolute inset-0 -z-10"
+      >
+        <div
+          class="absolute inset-0 bg-[url('assets/uploads/projects/weather.jpg')] bg-cover bg-center opacity-[0.08]"
+        ></div>
+        <div
+          class="absolute inset-0 bg-gradient-to-b from-dark/55 via-transparent to-dark/55"
+        ></div>
+      </div>
+
+      <div class="mx-auto max-w-6xl px-4">
+        <div class="text-center">
+          <h2 class="font-orbitron text-3xl font-bold">
+            My
+            <span
+              class="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
+              >Projects</span
+            >
+          </h2>
+          <p class="mt-3 text-text-secondary">
+            Here are some of my recent works
+          </p>
+        </div>
+
+        <div
+          class="mt-8 flex flex-wrap justify-center gap-3"
+          id="projectFilters"
+        >
+          <button
+            class="filter-btn rounded-full bg-white/5 px-5 py-2 text-sm ring-1 ring-white/10 hover:ring-primary/40 transition data-[active=true]:bg-primary/15 data-[active=true]:text-primary"
+            data-filter="all"
+            data-active="true"
+          >
+            All
+          </button>
+          <button
+            class="filter-btn rounded-full bg-white/5 px-5 py-2 text-sm ring-1 ring-white/10 hover:ring-primary/40 transition"
+            data-filter="web"
+          >
+            Web Development
+          </button>
+          <button
+            class="filter-btn rounded-full bg-white/5 px-5 py-2 text-sm ring-1 ring-white/10 hover:ring-primary/40 transition"
+            data-filter="fullstack"
+          >
+            Full Stack
+          </button>
+          <button
+            class="filter-btn rounded-full bg-white/5 px-5 py-2 text-sm ring-1 ring-white/10 hover:ring-primary/40 transition"
+            data-filter="mobile"
+          >
+            Mobile Apps
+          </button>
+        </div>
+
+        <div
+          id="noProjects"
+          class="hidden mt-10 text-center text-text-secondary"
+        >
+          No projects found for this filter.
+        </div>
+
+        <div
+          class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
+          id="projectsGrid"
+        ></div>
+      </div>
+
+      <!-- Project Modal -->
+      <div id="projectModal" class="fixed inset-0 z-[60] hidden">
+        <div class="absolute inset-0 bg-black/70" data-modal-close></div>
+        <div
+          class="relative mx-auto mt-24 w-[92%] max-w-3xl rounded-2xl bg-dark-light p-5 ring-1 ring-white/10"
+        >
+          <div class="flex items-start justify-between gap-4">
+            <h3 id="projectModalTitle" class="font-orbitron text-xl font-bold">
+              Project Details
+            </h3>
+            <button
+              class="rounded-md px-3 py-2 text-white/80 hover:text-primary"
+              aria-label="Close"
+              data-modal-close
+            >
+              <i class="fas fa-xmark"></i>
+            </button>
+          </div>
+          <div id="projectModalBody" class="mt-4"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-14 bg-dark-light">
+      <div class="mx-auto max-w-6xl px-4">
+        <div class="text-center">
+          <div
+            class="mx-auto inline-flex items-center gap-2 rounded-full bg-white/5 px-4 py-2 text-sm ring-1 ring-white/10"
+          >
+            <i class="fas fa-paper-plane text-primary"></i>
+            <span>Let's Start a Conversation</span>
+          </div>
+          <h2 class="mt-4 font-orbitron text-3xl font-bold">
+            Get In
+            <span
+              class="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
+              >Touch</span
+            >
+          </h2>
+          <p class="mt-3 text-text-secondary">
+            Ready to bring your ideas to life? Let's discuss your project and
+            create something amazing together.
+          </p>
+        </div>
+
+        <div class="mt-10 grid gap-8 lg:grid-cols-12">
+          <div class="lg:col-span-8">
+            <div class="rounded-3xl bg-dark p-7 ring-1 ring-white/10">
+              <div>
+                <h3 class="text-lg font-semibold">
+                  <i class="fas fa-comment-dots mr-2 text-primary"></i>Send Me a
+                  Message
+                </h3>
+                <p class="mt-1 text-sm text-text-secondary">
+                  I'm excited to hear about your project ideas!
+                </p>
+              </div>
+
+              <div
+                id="contactAlert"
+                class="hidden mt-5 rounded-2xl border border-primary/30 bg-primary/10 p-4 text-sm text-white"
+              ></div>
+
+              <form id="contactForm" class="mt-6 grid gap-4">
+                <div class="grid gap-4 sm:grid-cols-2">
+                  <div>
+                    <label class="text-sm text-white/90" for="name"
+                      ><i class="fas fa-user mr-2 text-primary"></i>Your Name
+                      *</label
+                    >
+                    <input
+                      id="name"
+                      name="name"
+                      required
+                      class="mt-2 w-full rounded-2xl bg-white/5 px-4 py-3 text-sm ring-1 ring-white/10 placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-primary"
+                      placeholder="Enter your full name"
+                    />
+                    <div
+                      class="mt-1 text-xs text-red-300"
+                      data-feedback-for="name"
+                    ></div>
+                  </div>
+                  <div>
+                    <label class="text-sm text-white/90" for="email"
+                      ><i class="fas fa-envelope mr-2 text-primary"></i>Your
+                      Email *</label
+                    >
+                    <input
+                      id="email"
+                      name="email"
+                      type="email"
+                      required
+                      class="mt-2 w-full rounded-2xl bg-white/5 px-4 py-3 text-sm ring-1 ring-white/10 placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-primary"
+                      placeholder="Enter your email address"
+                    />
+                    <div
+                      class="mt-1 text-xs text-red-300"
+                      data-feedback-for="email"
+                    ></div>
+                  </div>
+                </div>
+
+                <div>
+                  <label class="text-sm text-white/90" for="subject"
+                    ><i class="fas fa-tag mr-2 text-primary"></i>Project
+                    Type</label
+                  >
+                  <select
+                    id="subject"
+                    name="subject"
+                    class="mt-2 w-full rounded-2xl bg-white/5 px-4 py-3 text-sm ring-1 ring-white/10 focus:outline-none focus:ring-2 focus:ring-primary"
+                  >
+                    <option value="">Select project type...</option>
+                    <option value="Website Development">
+                      Website Development
+                    </option>
+                    <option value="Web Application">Web Application</option>
+                    <option value="E-Commerce Website">
+                      E-Commerce Website
+                    </option>
+                    <option value="Portfolio Website">Portfolio Website</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label class="text-sm text-white/90" for="budget"
+                    ><i class="fas fa-indian-rupee-sign mr-2 text-primary"></i
+                    >Project Budget (Optional)</label
+                  >
+                  <select
+                    id="budget"
+                    name="budget"
+                    class="mt-2 w-full rounded-2xl bg-white/5 px-4 py-3 text-sm ring-1 ring-white/10 focus:outline-none focus:ring-2 focus:ring-primary"
+                  >
+                    <option value="">Select budget range...</option>
+                    <option value="Under ₹10,000">Under ₹10,000</option>
+                    <option value="₹10,000 - ₹25,000">₹10,000 - ₹25,000</option>
+                    <option value="₹25,000 - ₹50,000">₹25,000 - ₹50,000</option>
+                    <option value="₹50,000+">₹50,000+</option>
+                    <option value="To be discussed">To be discussed</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label class="text-sm text-white/90" for="message"
+                    ><i class="fas fa-edit mr-2 text-primary"></i>Project
+                    Details *</label
+                  >
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows="6"
+                    required
+                    class="mt-2 w-full rounded-2xl bg-white/5 px-4 py-3 text-sm ring-1 ring-white/10 placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-primary"
+                    placeholder="Tell me about your project requirements, timeline, and any specific features you need..."
+                  ></textarea>
+                  <div
+                    class="mt-1 flex items-center justify-between text-xs text-text-secondary"
+                  >
+                    <div class="text-red-300" data-feedback-for="message"></div>
+                    <div><span id="charCount">0</span> characters</div>
+                  </div>
+                </div>
+
+                <div class="flex flex-wrap items-center gap-4">
+                  <button
+                    type="submit"
+                    class="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-primary to-secondary px-6 py-3 text-sm font-semibold text-dark hover:-translate-y-0.5 transition"
+                  >
+                    <span class="inline-flex items-center" id="sendBtnLabel"
+                      ><i class="fas fa-paper-plane mr-2"></i>Send Message</span
+                    >
+                    <span class="hidden items-center" id="sendBtnLoading"
+                      ><i class="fas fa-spinner fa-spin mr-2"></i
+                      >Sending...</span
+                    >
+                  </button>
+                  <p class="text-sm text-text-secondary">
+                    <i class="fas fa-info-circle mr-2"></i>I typically respond
+                    within 24 hours
+                  </p>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <div class="lg:col-span-4">
+            <div class="grid gap-4">
+              <div class="rounded-3xl bg-dark p-6 ring-1 ring-white/10">
+                <h3 class="font-semibold">
+                  <i class="fas fa-address-card mr-2 text-primary"></i>Contact
+                  Information
+                </h3>
+                <p class="mt-1 text-sm text-text-secondary">
+                  Let's connect and build something great!
+                </p>
+
+                <div class="mt-5 grid gap-4">
+                  <div class="rounded-2xl bg-white/5 p-4 ring-1 ring-white/10">
+                    <div class="text-primary">
+                      <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="mt-2 font-semibold">Location</div>
+                    <div class="text-sm text-text-secondary">
+                      Patna, Bihar, India
+                    </div>
+                    <div class="text-xs text-text-secondary">
+                      Available for remote work
+                    </div>
+                  </div>
+                  <div class="rounded-2xl bg-white/5 p-4 ring-1 ring-white/10">
+                    <div class="text-primary">
+                      <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="mt-2 font-semibold">Email</div>
+                    <div class="text-sm text-text-secondary">
+                      akjaiswal99318@gmail.com
+                    </div>
+                    <div class="text-xs text-text-secondary">
+                      Primary contact
+                    </div>
+                  </div>
+                  <div class="rounded-2xl bg-white/5 p-4 ring-1 ring-white/10">
+                    <div class="text-primary"><i class="fas fa-phone"></i></div>
+                    <div class="mt-2 font-semibold">Phone / WhatsApp</div>
+                    <div class="text-sm text-text-secondary">
+                      +91 9931830132
+                    </div>
+                    <div class="text-xs text-text-secondary">
+                      Available for calls
+                    </div>
+                  </div>
+                  <div class="rounded-2xl bg-white/5 p-4 ring-1 ring-white/10">
+                    <div class="text-primary"><i class="fas fa-clock"></i></div>
+                    <div class="mt-2 font-semibold">Response Time</div>
+                    <div class="text-sm text-text-secondary">
+                      Within 24 hours
+                    </div>
+                    <div class="text-xs text-text-secondary">
+                      Usually faster
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="rounded-3xl bg-dark p-6 ring-1 ring-white/10">
+                <h4 class="font-semibold">Follow & Connect</h4>
+                <div class="mt-4 grid gap-3">
+                  <a
+                    class="rounded-2xl bg-white/5 p-4 ring-1 ring-white/10 hover:ring-primary/40 transition"
+                    href="https://github.com/Ashutoshjaiswal-121"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <div class="flex items-center justify-between">
+                      <div class="flex items-center gap-3">
+                        <i class="fab fa-github text-primary text-xl"></i>
+                        <div>
+                          <div class="font-semibold">GitHub</div>
+                          <div class="text-xs text-text-secondary">
+                            See my code
+                          </div>
+                        </div>
+                      </div>
+                      <i
+                        class="fas fa-arrow-up-right-from-square text-white/60"
+                      ></i>
+                    </div>
+                  </a>
+                  <a
+                    class="rounded-2xl bg-white/5 p-4 ring-1 ring-white/10 hover:ring-primary/40 transition"
+                    href="https://www.linkedin.com/in/ak-jaiswal/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <div class="flex items-center justify-between">
+                      <div class="flex items-center gap-3">
+                        <i class="fab fa-linkedin text-primary text-xl"></i>
+                        <div>
+                          <div class="font-semibold">LinkedIn</div>
+                          <div class="text-xs text-text-secondary">
+                            Professional profile
+                          </div>
+                        </div>
+                      </div>
+                      <i
+                        class="fas fa-arrow-up-right-from-square text-white/60"
+                      ></i>
+                    </div>
+                  </a>
+                  <a
+                    class="rounded-2xl bg-white/5 p-4 ring-1 ring-white/10 hover:ring-primary/40 transition"
+                    href="https://www.geeksforgeeks.org/profile/ashutoshjaiswal121"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <div class="flex items-center justify-between">
+                      <div class="flex items-center gap-3">
+                        <i class="fas fa-code text-primary text-xl"></i>
+                        <div>
+                          <div class="font-semibold">GeeksforGeeks</div>
+                          <div class="text-xs text-text-secondary">
+                            DSA practice
+                          </div>
+                        </div>
+                      </div>
+                      <i
+                        class="fas fa-arrow-up-right-from-square text-white/60"
+                      ></i>
+                    </div>
+                  </a>
+                </div>
+              </div>
+
+              <div class="rounded-3xl bg-dark p-6 ring-1 ring-white/10">
+                <div class="flex items-center gap-2">
+                  <span class="h-2.5 w-2.5 rounded-full bg-green-400"></span>
+                  <span class="font-semibold">Currently Available</span>
+                </div>
+                <p class="mt-2 text-sm text-text-secondary">
+                  I'm accepting new projects and excited to collaborate!
+                </p>
+                <div class="mt-4 grid grid-cols-2 gap-3">
+                  <div
+                    class="rounded-2xl bg-white/5 p-4 text-center ring-1 ring-white/10"
+                  >
+                    <div class="font-orbitron text-lg">8+</div>
+                    <div class="text-xs text-text-secondary">Projects Done</div>
+                  </div>
+                  <div
+                    class="rounded-2xl bg-white/5 p-4 text-center ring-1 ring-white/10"
+                  >
+                    <div class="font-orbitron text-lg">100%</div>
+                    <div class="text-xs text-text-secondary">
+                      Client Satisfaction
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ (from contact.php) -->
+        <div class="mt-14">
+          <div class="text-center">
+            <h3 class="font-orbitron text-2xl font-bold">
+              Frequently Asked
+              <span
+                class="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
+                >Questions</span
+              >
+            </h3>
+            <p class="mt-2 text-text-secondary">
+              Quick answers to common questions
+            </p>
+          </div>
+
+          <div class="mx-auto mt-8 max-w-3xl grid gap-3" id="faqList">
+            <div class="faq-item rounded-2xl bg-dark p-5 ring-1 ring-white/10">
+              <button
+                class="faq-q flex w-full items-center justify-between gap-4 text-left"
+              >
+                <span class="font-semibold"
+                  >What types of projects do you work on?</span
+                >
+                <i class="fas fa-chevron-down text-white/70"></i>
+              </button>
+              <div class="faq-a hidden mt-3 text-sm text-text-secondary">
+                I specialize in web development including responsive websites,
+                web applications, e-commerce platforms, and portfolio sites
+                using HTML, CSS, JavaScript, PHP, and modern frameworks.
+              </div>
+            </div>
+
+            <div class="faq-item rounded-2xl bg-dark p-5 ring-1 ring-white/10">
+              <button
+                class="faq-q flex w-full items-center justify-between gap-4 text-left"
+              >
+                <span class="font-semibold"
+                  >What's your typical project timeline?</span
+                >
+                <i class="fas fa-chevron-down text-white/70"></i>
+              </button>
+              <div class="faq-a hidden mt-3 text-sm text-text-secondary">
+                Project timelines vary based on complexity. Simple websites take
+                1-2 weeks, while complex applications may take 4-6 weeks. I
+                provide detailed timelines during our initial discussion.
+              </div>
+            </div>
+
+            <div class="faq-item rounded-2xl bg-dark p-5 ring-1 ring-white/10">
+              <button
+                class="faq-q flex w-full items-center justify-between gap-4 text-left"
+              >
+                <span class="font-semibold"
+                  >Do you provide ongoing support?</span
+                >
+                <i class="fas fa-chevron-down text-white/70"></i>
+              </button>
+              <div class="faq-a hidden mt-3 text-sm text-text-secondary">
+                Yes! I offer 30 days of free support after project completion
+                and ongoing maintenance packages to keep your website running
+                smoothly.
+              </div>
+            </div>
+
+            <div class="faq-item rounded-2xl bg-dark p-5 ring-1 ring-white/10">
+              <button
+                class="faq-q flex w-full items-center justify-between gap-4 text-left"
+              >
+                <span class="font-semibold"
+                  >What's your development process?</span
+                >
+                <i class="fas fa-chevron-down text-white/70"></i>
+              </button>
+              <div class="faq-a hidden mt-3 text-sm text-text-secondary">
+                My process includes: 1) Requirement analysis, 2) Planning &
+                design, 3) Development, 4) Testing, 5) Deployment, and 6)
+                Support. I keep clients updated throughout the process.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact CTA -->
+        <div
+          class="mt-14 rounded-3xl bg-gradient-to-r from-primary/15 to-secondary/15 p-10 ring-1 ring-white/10 text-center"
+        >
+          <h3 class="font-orbitron text-2xl font-bold">
+            Ready to Start Your Project?
+          </h3>
+          <p class="mt-2 text-text-secondary">
+            Let's turn your ideas into reality. Get in touch today for a free
+            consultation!
+          </p>
+          <div class="mt-6 flex flex-wrap justify-center gap-3">
+            <a
+              href="tel:+919931830132"
+              class="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-primary to-secondary px-6 py-3 text-sm font-semibold text-dark hover:-translate-y-0.5 transition"
+              ><i class="fas fa-phone mr-2"></i>Call Now</a
+            >
+            <a
+              href="https://wa.me/917265061330"
+              target="_blank"
+              rel="noreferrer"
+              class="inline-flex items-center justify-center rounded-full bg-green-500 px-6 py-3 text-sm font-semibold text-dark hover:-translate-y-0.5 transition"
+              ><i class="fab fa-whatsapp mr-2"></i>WhatsApp</a
+            >
+            <a
+              href="mailto:akjaiswal99318@gmail.com"
+              class="inline-flex items-center justify-center rounded-full border-2 border-primary/70 px-6 py-3 text-sm font-semibold text-primary hover:bg-primary hover:text-dark hover:-translate-y-0.5 transition"
+              ><i class="fas fa-envelope mr-2"></i>Email Directly</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/10 py-8">
+      <div class="mx-auto max-w-6xl px-4">
+        <div
+          class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between"
+        >
+          <p class="text-sm text-white/80">
+            &copy; 2026 Ashutosh Jaiswal. All rights reserved.
+          </p>
+          <div class="flex items-center gap-4 text-lg">
+            <a
+              class="text-white/80 hover:text-primary transition"
+              href="https://github.com/Ashutoshjaiswal-121"
+              target="_blank"
+              rel="noreferrer"
+              ><i class="fab fa-github"></i
+            ></a>
+            <a
+              class="text-white/80 hover:text-primary transition"
+              href="https://www.linkedin.com/in/ak-jaiswal/"
+              target="_blank"
+              rel="noreferrer"
+              ><i class="fab fa-linkedin"></i
+            ></a>
+            <a
+              class="text-white/80 hover:text-primary transition"
+              href="https://www.geeksforgeeks.org/profile/ashutoshjaiswal121"
+              target="_blank"
+              rel="noreferrer"
+              ><i class="fas fa-code"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to top -->
+    <button
+      id="backToTop"
+      class="fixed bottom-7 right-7 z-50 hidden h-12 w-12 items-center justify-center rounded-full bg-primary text-dark shadow-glow hover:-translate-y-1 transition"
+      aria-label="Back to top"
+    >
+      <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
